@@ -26,7 +26,7 @@ Create and test backprop trainer
     Total error: 1.23940309483
     Total error: 0.546129967878
     >>> abs(n.params[10:15] - array([ -0.53868206, -0.54185834,  0.26726394, -1.90008234, -1.12114946])).round(5)
-    array([ 0.,  0.,  0.,  0.,  0.])
+    array([0., 0., 0., 0., 0.])
 
 Now the same for RPROP
 
@@ -37,7 +37,7 @@ Now the same for RPROP
     epoch      2  total error      0.15572   avg weight       0.92684
     epoch      3  total error      0.13036   avg weight       0.92604
     >>> abs(n.params[5:10] - array([ -0.19241111,  1.43404022,  0.23062397, -0.40105413,  0.62100109])).round(5)
-    array([ 0.,  0.,  0.,  0.,  0.])
+    array([0., 0., 0., 0., 0.])
 
 """
 

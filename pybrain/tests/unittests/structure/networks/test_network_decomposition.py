@@ -8,7 +8,7 @@ Check if it was built correctly
     12
     >>> tmp = n.getDecomposition()
     >>> tmp[2]
-    array([ 1.,  1.,  1.,  1.])
+    array([1., 1., 1., 1.])
 
 Let's keep the output value for later
     >>> act = n.activate([-1.2,0.5])
@@ -19,12 +19,12 @@ Now, change the values for the first neuron
 
 The network has not changed yet
     >>> n.getDecomposition()[0]
-    array([ 1.,  1.,  1.,  1.])
+    array([1., 1., 1., 1.])
 
 Now it has:
     >>> n.setDecomposition(tmp)
     >>> n.getDecomposition()[0]
-    array([ 0.,  0.,  0.,  0.])
+    array([0., 0., 0., 0.])
 
 The new output value should be 2/3 of the original one, with one neuron disabled.
 

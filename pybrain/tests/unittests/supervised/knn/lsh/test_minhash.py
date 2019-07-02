@@ -54,7 +54,7 @@ Some "introspection" to check if everything went right
 
     >>> import pprint
     >>> pprint.pprint(dict(m.buckets))
-    {(0, 0): [(array([ True,  True,  True,  True,  True], dtype=bool), 'red')]}
+    {(0, 0): [(array([ True,  True,  True,  True,  True]), 'red')]}
 
     >>> m._hash(array([1, 1, 0, 0, 0]))
     (0, 0)
@@ -66,9 +66,9 @@ Put another one in
 An check if this one is favored above the other
 
     >>> m.knn(array([1, 1, 0, 0, 0]), 1)
-    [(array([... True, False], dtype=bool), 'red')]
+    [(array([ True, True, True, True, False]), 'red')]
     >>> m.knn(array([1, 1, 0, 0, 0]), 1)
-    [(array([... True, False], dtype=bool), 'red')]
+    [(array([ True, True, True, True, False]), 'red')]
 
 
 

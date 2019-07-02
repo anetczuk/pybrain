@@ -17,15 +17,15 @@ Now test some forwards:
 
     >>> layer._forwardImplementation(input, output)
     >>> output
-    array([ 0.,  1.,  1.])
+    array([0., 1., 1.])
 
     >>> layer._forwardImplementation(input, output)
     >>> output
-    array([ 0.,  0.,  1.])
+    array([0., 0., 1.])
 
     >>> layer._forwardImplementation(input, output)
     >>> output
-    array([ 0.,  1.,  1.])
+    array([0., 1., 1.])
 
 """
 

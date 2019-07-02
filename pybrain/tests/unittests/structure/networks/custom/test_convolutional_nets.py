@@ -24,10 +24,10 @@ We let the network process the input:
 The input of the first features (e.g. white stone presence) is in the middle, like we set it:
 
     >>> print(inp[1:5,1:5])
-    [[ 0.  0.  0.  0.]
-     [ 0.  0.  0.  0.]
-     [ 0.  1.  0.  0.]
-     [ 0.  1.  1.  0.]]
+    [[0. 0. 0. 0.]
+     [0. 0. 0. 0.]
+     [0. 1. 0. 0.]
+     [0. 1. 1. 0.]]
 
 The rest of that array has been padded with an arbitrary, but identical bias weight:
 

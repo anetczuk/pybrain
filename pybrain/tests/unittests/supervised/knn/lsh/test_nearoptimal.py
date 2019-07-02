@@ -33,19 +33,19 @@ Define some points to work with
 
     >>> a = array([0, 0])
     >>> m._findHypercube(a)
-    (array([0, 0]), array([ 0.,  0.]))
+    (array([0, 0]), array([0., 0.]))
 
     >>> b = array([0.14 + 3 * SIDELENGTH, .5])
     >>> m._findHypercube(b)
-    (array([3, 0]), array([ 0.14,  0.5 ]))
+    (array([3, 0]), array([0.14, 0.5 ]))
 
     >>> c = array([.5, 42 * SIDELENGTH + 0.1])
     >>> m._findHypercube(c)
-    (array([ 0, 42]), array([ 0.5,  0.1]))
+    (array([ 0, 42]), array([0.5, 0.1]))
 
     >>> d = array([-1 * SIDELENGTH + 0.1, 2 * SIDELENGTH + 0.1])
     >>> m._findHypercube(d)
-    (array([-1,  2]), array([ 0.1,  0.1]))
+    (array([-1,  2]), array([0.1, 0.1]))
 
 Overwrite the balls of the hash to make test the ball intersection function
 
@@ -110,7 +110,7 @@ Example Usage:
     >>> m.insert(array([1.02331605,  0.95385982]), 'red')
     >>> m.insert(array([0.80838576, 1.07507294]), 'red')
     >>> m.knn(array([0.9585762, 1.15822724]), 1)
-    [(array([ 0.9585762 ,  1.15822724]), 'red')]
+    [(array([0.9585762 , 1.15822724]), 'red')]
 
 
 """
