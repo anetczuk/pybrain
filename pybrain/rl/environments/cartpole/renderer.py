@@ -1,10 +1,9 @@
 __author__ = 'Thomas Rueckstiess, ruecksti@in.tum.de'
 
-from pylab import ion, figure, draw, Rectangle, Line2D
+from pylab import ion, figure, draw, Rectangle, Line2D, pause
 from scipy import cos, sin
 from pybrain.rl.environments.renderer import Renderer
 import threading
-import time
 
 
 class CartPoleRenderer(Renderer):
@@ -67,5 +66,6 @@ class CartPoleRenderer(Renderer):
             self.pole.set_xdata([self.pos, self.pos + self.polelength * sin(self.angle)])
             self.pole.set_ydata([0, self.polelength * cos(self.angle)])
             draw()
-            time.sleep(0.05)
+#             time.sleep(0.05)
+            pause(0.005)
         self.stopRequest = False

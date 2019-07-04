@@ -76,7 +76,7 @@ class CartPoleEnvironment(GraphicalEnvironment):
             derivatives of the state variables given in x. for each variable in x, it returns the first order
             derivative at time t.
         """
-        F = self.action
+        F = self.action[0]
         (theta, theta_, _s, s_) = x
         u = theta_
         sin_theta = sin(theta)
