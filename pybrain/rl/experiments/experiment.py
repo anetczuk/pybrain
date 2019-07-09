@@ -23,8 +23,10 @@ class Experiment(object):
             it to the task. Then gives the reward to the agent again and returns it.
         """
         self.stepid += 1
-        self.agent.integrateObservation(self.task.getObservation())
-        self.task.performAction(self.agent.getAction())
+        observation = self.task.getObservation()
+        self.agent.integrateObservation(observation)
+        action = self.agent.getAction()
+        self.task.performAction(action)
         reward = self.task.getReward()
         self.agent.giveReward(reward)
         return reward
