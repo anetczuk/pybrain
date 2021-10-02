@@ -68,7 +68,7 @@ class FlexCubeRenderer(object):
 
     # If self.savePics=True this method saves the produced images
     def saveTo(self, filename, format="JPEG"):
-        import Image # get PIL's functionality...
+        from PIL import Image # get PIL's functionality...
         width, height = 800, 600
         glPixelStorei(GL_PACK_ALIGNMENT, 1)
         data = glReadPixels(0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE)
