@@ -1,6 +1,6 @@
 __author__ = "Thomas Rueckstiess, ruecksti@in.tum.de"
 
-from scipy import random
+from scipy import random, nextafter
 
 from pybrain.rl.explorers.explorer import Explorer
 from pybrain.tools.functions import expln, explnPrime
@@ -15,6 +15,9 @@ class NormalExplorer(Explorer, ParameterContainer):
         the real std. derivation is a transformation of sigma according
         to the expln() function (see pybrain.tools.functions).
     """
+    
+    min_float = nextafter( 0, 1 )
+    
 
     def __init__(self, dim, sigma=0.):
         Explorer.__init__(self, dim, dim)
@@ -38,12 +41,21 @@ class NormalExplorer(Explorer, ParameterContainer):
     sigma = property(_getSigma, _setSigma)
 
     def _forwardImplementation(self, inbuf, outbuf):
-        outbuf[:] = random.normal(inbuf, expln(self.sigma))
+        expln_sigma = self._calc_expln_sigma()
+        outbuf[:] = random.normal(inbuf, expln_sigma)
 
     def _backwardImplementation(self, outerr, inerr, outbuf, inbuf):
-        expln_sigma = expln(self.sigma)
+        expln_sigma = self._calc_expln_sigma()
         self._derivs += ((outbuf - inbuf) ** 2 - expln_sigma ** 2) / expln_sigma * explnPrime(self.sigma)
         inerr[:] = (outbuf - inbuf)
+
+    def _calc_expln_sigma(self):
+        expln_sigma = expln(self.sigma)
+        if expln_sigma < self.min_float:
+            ## prevent returning zero value
+            return self.min_float
+        return expln_sigma
+        
 
         # auto-alpha
         # inerr /= expln_sigma**2
