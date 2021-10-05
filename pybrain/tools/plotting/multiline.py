@@ -3,7 +3,7 @@ __author__ = 'Martin Felder and Frank Sehnke'
 
 import math, imp
 from matplotlib.lines import Line2D
-from pylab import clf, plot, axes, show, xlabel, ylabel, savefig, ioff, draw_if_interactive
+from pylab import clf, plot, axes, show, xlabel, ylabel, title, savefig, ioff, draw_if_interactive
 
 
 class MultilinePlotter:
