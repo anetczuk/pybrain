@@ -51,9 +51,10 @@ class NormalExplorer(Explorer, ParameterContainer):
 
     def _calc_expln_sigma(self):
         expln_sigma = expln(self.sigma)
-        if expln_sigma < self.min_float:
-            ## prevent returning zero value
-            return self.min_float
+        for i in range(0, self.dim):
+            if expln_sigma[i] < self.min_float:
+                ## prevent returning zero value
+                expln_sigma[i] = self.min_float
         return expln_sigma
         
 
